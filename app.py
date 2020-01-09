@@ -11,9 +11,7 @@ api = Api(app)
 
 from models.testmodel import db,DevModel
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
+
 
 #devices = []
 
@@ -88,5 +86,5 @@ api.add_resource(Dev,'/device/<string:devId>')
 api.add_resource(DeviceList,'/devices')
 
 
-db.init_app(app)
+
 app.run(port=5000, debug=True)

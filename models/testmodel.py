@@ -4,6 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 class DevModel(db.Model):
+    __tablename__ = 'devices'
+    
     devId = db.Column(db.String(20), primary_key=True)
     power = db.Column(db.Float(precision=2))
     voltage = db.Column(db.Float(precision=2))
